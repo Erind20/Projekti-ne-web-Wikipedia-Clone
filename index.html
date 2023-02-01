@@ -46,7 +46,7 @@
           </ul>
         </div>
       </div>
-      <main id="main-holder" class="main-holder">
+      <!-- <main id="main-holder" class="main-holder">
         <h1 id="login-header">Logohuni:</h1>
         <button class="close-black" onclick="HideDiv()">X</button>
 
@@ -74,12 +74,15 @@
           />
           <input type="submit" value="Login" id="login-form-submit" />
         </form>
-      </main>
+      </main> -->
       <div class="mainsection">
         <div class="headerLinks">
-          <span class="user">Nuk jeni lloguar</span> <a href="#">Bisedoni</a>
-          <a href="#">Kontribuimet</a> <a href="#">Krijo një llogari</a>
-          <button id="logoni" onclick="ShowDiv()">logoni</button>
+          <span class="user" id="user">Nuk jeni lloguar</span>
+          <a href="#">Bisedoni</a> <a href="#">Kontribuimet</a>
+          <a href="#">Krijo një llogari</a>
+          <button id="logoni">
+            <a href="index.php">logoni</a>
+          </button>
         </div>
         <div class="tabs clearfix">
           <div class="tabsLeft">
@@ -303,6 +306,398 @@
                   https://www.canva.com/<br />
                   https://www.w3schools.com/html/html_favicon.asp<br />
                   https://sq.wikipedia.org/wiki/Kolegji_UBT
+                  https://stackoverflow.com/questions/31860157/css3-transform-translate-on-hover-with-transition
+                  https://www.youtube.com/watch?v=JDn6OAMnJwQ
+                </p>
+                <br />
+              </div>
+              <div class="modal-footer">
+                <h2>Enis Rexhepi</h2>
+              </div>
+            </div>
+          </div>
+          <p>
+            Ky projekt ka si qellim te jete nje klon i thjeshte i Wikipedias,<br />
+            ku pjesa tjeter e backendit si login dhe sign up do te behen ne
+            afatin tjeter te provimit.
+          </p>
+
+          <h2 id="uni">Universitete të tjera</h2>
+          <p>
+            Disa nga Unviersitetet me te njohura ne Kosovë...<br />Për më tepër:
+          </p>
+
+          <div class="lavenderBox">
+            <div class="header">Universitete në Kosovë</div>
+            <div class="subtitle linklist">
+              <a href="#">Publike</a>
+            </div>
+            <div class="linklist">
+              <a href="#">Universiteti i Prishtinës </a>
+              <a href="#">Universiteti i Mitrovicës </a>
+              <a href="#">Universiteti i Prizrenit </a>
+              <a href="#">Universiteti i Shkencave të Aplikuara në Ferizaj </a>
+              <a href="#">Universiteti i Gjakovës "Fehmi Agani" </a>
+              <a href="#">Universiteti "Kadri Zeka" në Gjilan </a>
+              <a href="#">Universiteti "Haxhi Zeka" në Pejë </a>
+            </div>
+
+            <div class="subtitle">
+              <div class="header">Private</div>
+              <div class="linklist">
+                <a href="#">Instituti Rochester i Teknologjisë në Kosovë </a>
+                <a href="#">Kolegji Evropian Dukagjini </a>
+                <a href="#">Kolegji Iliria </a>
+                <a href="#">Kolegji Unverzum</a>
+                <a href="#" style="color: black">Kolegji UBT</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="categories">
+            <a href="/404.html">Faqja 404</a>
+            <a href="/404.html">Faqja 404</a> <a href="/404.html">Faqja 404</a>
+          </div>
+        </div>
+        <div class="pagefooter">
+          Kjo faqe është redaktuar për herë te fundit më 9 tetor 2021, në orën
+          19:31.<br />
+          Të gjitha materialet që gjenden në këtë faqë janë të mbrojtura nga
+          <a
+            href="https://creativecommons.org/licenses/by-sa/3.0/"
+            target="_blank"
+            rel="nofollow"
+            >Creative Commons Attribution/Share-Alike License;</a
+          >
+          <div class="footerlinks">
+            <a href="#">Privacy policy</a> <a href="#">About</a>
+            <a href="#">Terms and conditions</a>
+            <a href="#">Cookie statement</a> <a href="#">Developers</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script>
+      window.jQuery ||
+        document.write(
+          '<script src="js/vendor/jquery-1.12.0.min.js"><\/script>'
+        );
+    </script>
+    <script src="script.js"></script>
+  </body>
+</html>
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>Wikipedia/UBT</title>
+    <link rel="icon" type="image/x-icon" href="/img/favicon.ico " />
+    <meta
+      name="Projekt ne inxhineri dhe web"
+      content="Erind Avdiu Enis Rexhepi"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="stylesheet" href="style.css" />
+    <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+  </head>
+  <body>
+    <div class="wrapAll clearfix">
+      <div class="sidebar">
+        <div class="logo">
+          <a href="/"><img src="img/logo.png" alt="logo" /></a>
+        </div>
+        <div class="navigation">
+          <ul>
+            <li>
+              <a
+                style="font-weight: 700; color: blue"
+                href="http://www.projektiubt.byethost31.com/?i=1"
+                >Projekti tjeter</a
+              >
+            </li>
+            <li><a href="#rreth">Rreth</a></li>
+            <li><a href="#programet">Programet</a></li>
+          </ul>
+          <h3>Shih edhe:</h3>
+          <ul>
+            <li><a href="#fillimi">Fillimi i UBT-së</a></li>
+            <li><a href="#rrethprojektit">Rreth Projektit</a></li>
+            <li><a href="#uni">Universitete të tjera</a></li>
+          </ul>
+          <h3>Shih edhe:</h3>
+          <ul>
+            <li><a href="#">Help</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">lorem ispum</a></li>
+          </ul>
+        </div>
+      </div>
+      <!-- <main id="main-holder" class="main-holder">
+        <h1 id="login-header">Logohuni:</h1>
+        <button class="close-black" onclick="HideDiv()">X</button>
+
+        <div id="login-error-msg-holder">
+          <p id="login-error-msg">
+            Invalid username
+            <span id="error-msg-second-line">and/or password</span>
+          </p>
+        </div>
+
+        <form id="login-form">
+          <input
+            type="text"
+            name="username"
+            id="username-field"
+            class="login-form-field"
+            placeholder="Username"
+          />
+          <input
+            type="password"
+            name="password"
+            id="password-field"
+            class="login-form-field"
+            placeholder="Password"
+          />
+          <input type="submit" value="Login" id="login-form-submit" />
+        </form>
+      </main> -->
+      <div class="mainsection">
+        <div class="headerLinks">
+          <span class="user" id="user">Nuk jeni lloguar</span>
+          <a href="#">Bisedoni</a> <a href="#">Kontribuimet</a>
+          <a href="#">Krijo një llogari</a>
+          <button id="logoni">
+            <a href="index.php">logoni</a>
+          </button>
+        </div>
+        <div class="tabs clearfix">
+          <div class="tabsLeft">
+            <ul>
+              <li><a href="#" class="active">Artikull</a></li>
+              <li><a href="#">Bisedo</a></li>
+            </ul>
+          </div>
+          <div id="simpleSearch">
+            <input
+              type="text"
+              name="searchInput"
+              id="searchInput"
+              placeholder="Kerkoni në Wikipedia"
+              size="12"
+            />
+            <div id="submitSearch"></div>
+          </div>
+          <div class="tabsRight">
+            <ul>
+              <li><a href="#" class="active">Lexo</a></li>
+              <li><a href="#">Shiko burimin</a></li>
+              <li><a href="#">Shiko historine</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="article">
+          <h1>Kolegji UBT</h1>
+          <p class="siteSub">Nga Wikipedia, Enciklopedia e Lirë</p>
+          <p class="roleNote">
+            Kolegji UBT Universiteti për Biznes dhe Teknologji,[1] është një
+            universitet privat i cili gjendet në kryeqendrën e Republikës së
+            Kosovës, në Prishtinë.[2]
+          </p>
+          <hr />
+          <h2 id="rreth" style="text-align: left">RRETH</h2>
+
+          <div class="articleRight">
+            <div class="articleRightInner">
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Campusi_1.jpg/440px-Campusi_1.jpg"
+                alt="pencil"
+              />
+            </div>
+            UBT - <a href="">Universiteti për Biznes dhe Teknologji</a>
+          </div>
+          <p>
+            UBT-ja është institucion inovativë i arsimit të lartë në Kosovë, i
+            cili kombinon avantazhet e universiteteve të njohura
+            ndërkombëtarisht. Ky universitet ofron: Programe bashkëkohore të
+            studimit të bazuara në standardet ndërkombëtare të cilësisë
+            Akademikë dhe ekspertë të shquar Partneritet me universitetet dhe
+            institucionet më të njohura të cilat ofrojnë mundësinë e këmbimit të
+            jashtëm të studimeve dhe të përvojave profesionale Infrastrukturë
+            moderne dhe bashkëkohore të administrimit (në përputhje me ISO
+            9001).<br />
+            Lidhje të drejtpërdrejtë me ekonominë, projekte kërkimore akademike
+            dhe ndërkombëtare, si dhe të transferit të teknologjisë e të
+            njohurive Studentë dhe personel shumë të motivuar Të gjitha këto
+            komponente e bëjnë Kolegjin UBT jo vetëm një institucion të
+            rëndësishëm arsimor për të ardhmen e Kosovës, por edhe një
+            institucion modern në Evropë. Me vizionet: "Top Arsim për Top
+            Studentë" dhe "Suksesi me cilësi", UBT-ja është vazhdimisht në
+            kërkim drejt së ardhmes dhe si rezultat i kësaj, është bërë një prej
+            institucioneve më progresive dhe më cilësore të arsimit të lartë në
+            rajon.
+          </p>
+
+          <h2 id="programet" style="text-align: left">Programet</h2>
+
+          <p>
+            UBT ofron një mjedis dinamik dhe ndërkombëtar të studimit për
+            Bachelor dhe Master. Arsimi që ofrohet në UBT përfshin ligjërata në
+            gjuhë të huaja nga ligjërues dhe studiues nga jashtë, i cili krijon
+            një mjedis ndërkombëtar të studimit të mjedisit për studentë vendore
+            dhe ndërkombëtare. Me mbi 50 fusha të studimit, studentët mund të
+            zgjedhin njërën fushë specializimit që përshtatet me aspiratat e
+            tyre dhe të zhvillojnë njohuritë e nevojshme për t'u bërë të
+            suksesshëm në tregun e punës. Universiteti ofron studime
+            universitare dhe pas universitare.<br />
+            Programet studimore të akredituara në UBT janë: Menaxhment,
+            <br />Biznes dhe Ekonomi (Bachelor dhe Master) <br />Financa,<br />
+            banka dhe Sigurime Kontabilitet,<br />
+            Auditim dhe Tatime Marketingu dhe Shitja Menaxhimi, Ndërmarrësia dhe
+            Inovacioni Logjistikën dhe <br />Menaxhimi i Prokurimit<br />
+            Biznesi Ndërkombëtar<br />
+            <a href="CSE.html"
+              >Shkenca kompjuterike dhe Inxhinieri (Bachelor dhe Master)</a
+            >
+            <br />
+            Sistemet Inxhinierike Baza e të dhënave dhe Sistemet e
+            Informacionit<br />
+            Rrjeti i Telekomunikacionit<br />
+            Mekatronikë dhe Robotikë Dizajni dhe<br />
+            Multimedia<br />
+            Menaxhimi Mekatronik (Bachelor dhe Master)<br />
+            Electroteknika Elektronika Teknologjia EiInformacionit<br />
+            Prodhimi Industrial<br />
+            Dizajni Industrial<br />
+            Sistemet e informacionit (Bachelor dhe Master)<br />
+            Biznesi i Sistemeve të Informacionit Geo <br />Sistemet e
+            Informacionit (GIS)<br />
+            Biblioteka <br />Sistemet e Informacionit dhe Menaxhimi i Njohurive
+            Statistika,<br />
+            Përpunimin i të Dhënave dhe Simulimi<br />
+            Siguria e Informacionit dhe Privatësia Arkitekturë dhe Planifikim
+            Hapësinor (Bachelor dhe Master)<br />
+            Arkitektura Dizajni Planifikimi Hapësinor<br />
+            Energjia dhe Mjedisi <br />Ndërtimi dhe Infrastruktura Inxhinierike
+            (Bachelor)<br />
+            Infrastruktura Mjedisit<br />
+            Menaxhimi Ndërtimi<br />
+            Shkenca politike dhe Diplomaci (Bachelor)<br />
+            Marrëdhënie ndërkombëtare dhe Diplomaci <br />Integrimi Evropian
+            <br />Administrata Publike Juridik (Bachelor dhe Master)<br />
+            E Drejta Civile E Drejta Penale E Drejta Ndërkombëtare<br />
+            E drejta evropiane dhe ndërkombëtare e Biznesit<br />
+            Media dhe Komunikim (Bachelor)<br />
+            Gazetari Komunikimi<br />
+            Media Menaxhimi Marrëdhëniet me Publikun<br />
+            Gazetaria Online<br />
+            Kamera dhe Fotografia<br />
+            Energji, Inxhinieri (Diplomë Bachelor dhe Profesionale)
+            <br />Inxhinieringu i efikasiteti të energjisë (program i akredituar
+            vetëm në Kosovë)<br />
+            Ekonomia e Energjisë Projektim i Qëndrueshëm<br />
+            Prodhimi elektrikë dhe Energjia e Rinovueshme <br />Menaxhimi i
+            Energjisë Biomasa, Energjia dhe Mjedisi<br />
+            Politikat publike dhe Menaxhimi (Master)<br />
+            Shëndeti publik dhe<br />
+            Shkencat Shoqërore (Master)
+          </p>
+          <div class="contentsPanel">
+            <div class="contentsHeader">Referimet</div>
+            <ul>
+              <li>
+                <span>1</span><a href="#">Rreth</a>
+                <ul>
+                  <li>
+                    <span>1.1</span
+                    ><a
+                      href="https://www.123university.net/edu/6891/University-of-Business-and-Technology-UBT-"
+                      >^ "University of Business and Technology(UBT)". 123
+                      Universities. Marrë më 9 maj 2015. {{cite web}}: Mungon
+                      ose është bosh parametri |language= (Ndihmë!)</a
+                    >
+                  </li>
+                  <li>
+                    <span>1.2</span
+                    ><a
+                      href="https://www.university-directory.eu/Republic-of-Ka"
+                      >^ "University of Business and Technology(UBT)". UD. Marrë
+                      më 9 maj 2015.
+                    </a>
+                  </li>
+                  <li><span>1.3</span><a href="#">lorem ipsum </a></li>
+                  <li><span>1.4</span><a href="#">Lorem ipsum </a></li>
+                  <li><span>1.5</span><a href="#"> Lorem ipsum</a></li>
+                  <li><span>1.6</span><a href="#">Lorem Ipsum </a></li>
+                  <li><span>1.7</span><a href="#">Lorem Ipsum </a></li>
+                </ul>
+              </li>
+              <li><span>2</span><a href="#">Erind Avdiu</a></li>
+              <li><span>3</span><a href="#">Enis Rexhepi</a></li>
+            </ul>
+          </div>
+          <h2 id="fillimi">Fillimi i UBT-së</h2>
+
+          <p>
+            Ex quod meis per, ea paulo eirmod intellegam usu, eam te propriae
+            fabellas. Nobis graecis has at, an eum audire impetus. Ius epicuri
+            verterem ex, qui cu solet feugiat consetetur. Placerat apeirian et
+            sea, nec wisi viderer definiebas ex, at eum oratio honestatis.
+          </p>
+          <p>
+            Eum illum nulla graeci at, mea quis munere indoctum at. In sea
+            partiendo hendrerit. Quaestio partiendo an eam, rebum vitae accumsan
+            ius id. Duo at causae option.
+          </p>
+          <p>
+            At persius imperdiet vis, ea elit atqui aperiri mei, percipit
+            maiestatis sea eu. Has et partem hendrerit, vim cibo veniam aliquid
+            an. No pri populo abhorreant, everti mandamus ne mea. Debitis
+            forensibus suscipiantur ius cu. Ei per possim verterem, et iudico
+            voluptatum eos.
+          </p>
+          <h3 id="rrethprojektit">Rreth projektit</h3>
+          <p>
+            Sa i perket këtij projekti dhe referimit te materialit huazues ju
+            lutem klikoni në butonin e mëposhtëm,<br />
+            poashtu para ketij webi kemi krijuar edhe nje me heret por kemi
+            përdorur edhe bootstrap -
+            <a href="http://www.projektiubt.byethost31.com/">Kliko këtu</a>
+          </p>
+          <!-- Trigger/Open The Modal -->
+          <button id="myBtn" class="mt-5">Rreth projektit</button>
+          <!-- The Modal -->
+          <div id="myModal" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+              <div class="modal-header">
+                <span class="close">&times;</span>
+                <h2>Erind Avdiu</h2>
+              </div>
+              <div class="modal-body">
+                <p>
+                  Ky projekt është artikuluar me gjuhët
+                  HTML5,CSS,JAVASCRIPT,JAVASCRIPT,JQUERY.!
+                </p>
+                <p>
+                  Disa nga link-adresat për huazimin e kontentit,janë:<br />
+                  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+                  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+                  - - - - - - - - - - - - - - - - - - - <br />
+                  https://www.ubt-uni.net/<br />
+                  https://www.ubt-uni.net/<br />
+                  https://www.youtube.com/watch?v=Mr9y1l22RkI<br />
+                  https://freefrontend.com/css-modal-windows//<br />
+                  https://workik.com/code-for-website/photo-grid-for-team<br />
+                  https://stackoverflow.com/questions/40955591/how-can-i-make-jquery-change-navigation-color-on-scroll<br />
+                  https://www.canva.com/<br />
+                  https://www.w3schools.com/html/html_favicon.asp<br />
+                  https://sq.wikipedia.org/wiki/Kolegji_UBT
+                  https://stackoverflow.com/questions/31860157/css3-transform-translate-on-hover-with-transition
+                  https://www.youtube.com/watch?v=JDn6OAMnJwQ
                 </p>
                 <br />
               </div>
