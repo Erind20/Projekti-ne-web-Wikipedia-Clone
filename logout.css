@@ -1,0 +1,43 @@
+body {
+  background: #49c45e;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+}
+
+* {
+  font-family: sans-serif;
+  box-sizing: border-box;
+}
+h1,
+h3 {
+  color: rgb(48, 37, 37);
+}
+.buttons {
+  display: flex;
+  gap: 3rem;
+  margin-top: 2rem;
+}
+button {
+  padding: 2rem;
+  border-radius: 15px;
+}
+button:hover {
+  opacity: 0.7;
+  transform: translate(0, -5px);
+  padding: 2.5rem;
+}
+a {
+  text-decoration: none;
+  color: black;
+  font-size: 1.5rem;
+}
+
+.red {
+  background-color: rgb(237, 110, 110);
+}
+.blue {
+  background: #3bcce9;
+}
