@@ -1,0 +1,1 @@
+RewriteRule ^http://localhost/widget_corp/explore/home/$ http://localhost/widget_corp/explore/home/index.php [L]
