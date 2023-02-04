@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rreth nesh</title>
+    <style>
+      *,
+      *:before,
+      *:after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        overflow: hidden;
+        font-family: Helvetica, Arial, sans-serif;
+      }
+
+      .slider {
+        position: relative;
+        height: 100vh;
+        width: 100%;
+        overflow: hidden;
+      }
+      .slider__slides {
+        z-index: 1;
+        position: relative;
+        height: 100%;
+      }
+      .slider__control {
+        z-index: 2;
+        position: absolute;
+        top: 50%;
+        left: 5%;
+        width: 60px;
+        height: 60px;
+        margin-left: -30px;
+        margin-top: -30px;
+        border-radius: 50%;
+        background: #fff;
+        transition: background-color 0.3s;
+        cursor: pointer;
+      }
+      .slider__control--right {
+        left: 95%;
+      }
+      .slider__control:hover {
+        background-color: #2da6ff;
+      }
+      .slider__control-line {
+        position: absolute;
+        left: 23px;
+        top: 50%;
+        width: 3px;
+        height: 14px;
+        transform-origin: 50% 0;
+        transform: rotate(-45deg);
+      }
+      .slider__control-line:nth-child(2) {
+        transform: translateY(1px) rotate(-135deg);
+      }
+      .slider__control--right .slider__control-line {
+        left: 37px;
+        transform-origin: 1px 0;
+        transform: rotate(45deg);
+      }
+      .slider__control--right .slider__control-line:nth-child(2) {
+        transform: translateY(1px) rotate(135deg);
+      }
+      .slider__control-line:after {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #e2e2e2;
+        transition: background-color 0.3s;
+      }
+      .slider__control:hover .slider__control-line:after {
+        background-color: #fff;
+      }
+      .slider__control.a--rotation .slider__control-line:after {
+        -webkit-animation: arrowLineRotation 0.49s;
+        animation: arrowLineRotation 0.49s;
+      }
+      .slider__control.a--rotation .slider__control-line:nth-child(1):after {
+        -webkit-animation: arrowLineRotationRev 0.49s;
+        animation: arrowLineRotationRev 0.49s;
+      }
+
+      @-webkit-keyframes arrowLineRotation {
+        to {
+          transform: rotate(180deg);
+        }
+      }
+
+      @keyframes arrowLineRotation {
+        to {
+          transform: rotate(180deg);
+        }
+      }
+      @-webkit-keyframes arrowLineRotationRev {
+        to {
+          transform: rotate(-180deg);
+        }
+      }
+      @keyframes arrowLineRotationRev {
+        to {
+          transform: rotate(-180deg);
+        }
+      }
+      .slide {
+        overflow: hidden;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: 150vmax;
+        height: 150vmax;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+        transition: -webkit-clip-path 0s 0.91s;
+        transition: clip-path 0s 0.91s;
+        transition: clip-path 0s 0.91s, -webkit-clip-path 0s 0.91s;
+        -webkit-clip-path: circle(30px at 120vw 50%);
+        clip-path: circle(30px at 120vw 50%);
+      }
+      .slide.s--prev {
+        -webkit-clip-path: circle(30px at 30vw 50%);
+        clip-path: circle(30px at 30vw 50%);
+      }
+      .slide.s--active {
+        z-index: 1;
+        transition: -webkit-clip-path 1.3s;
+        transition: clip-path 1.3s;
+        transition: clip-path 1.3s, -webkit-clip-path 1.3s;
+        -webkit-clip-path: circle(120vmax at 120vw 50%);
+        clip-path: circle(120vmax at 120vw 50%);
+      }
+      .slide.s--active.s--active-prev {
+        -webkit-clip-path: circle(120vmax at 30vw 50%);
+        clip-path: circle(120vmax at 30vw 50%);
+      }
+      .slide:nth-child(1) .slide__inner {
+        background-image: url("https://pbs.twimg.com/media/FSdrFoUX0AA_g6H?format=jpg&name=4096x4096");
+      }
+      .slide:nth-child(2) .slide__inner {
+        background-image: url("https://reporteri.net/wp-content/uploads/2022/04/aaa-1-696x522-1.jpg");
+      }
+      .slide:nth-child(3) .slide__inner {
+        background-image: url("https://www.ubt-uni.net/wp-content/uploads/2018/12/48429281_363087597588666_8169859083617173504_n.jpg");
+      }
+      .slide:nth-child(4) .slide__inner {
+        background-image: url("https://ekonomiaonline.com/wp-content/uploads/2019/06/ubtfk1-1.jpg");
+      }
+      .slide:nth-child(5) .slide__inner {
+        background-image: url("http://photos.wikimapia.org/p/00/01/69/18/68_big.jpg");
+      }
+      .slide__inner {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: 100vw;
+        height: 100vh;
+        margin-left: -50vw;
+        margin-top: -50vh;
+        background-size: cover;
+        background-position: center center;
+      }
+      .slide__inner:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.3);
+      }
+      .slide__content {
+        position: absolute;
+        left: 5%;
+        top: 50%;
+        margin-left: -30px;
+        margin-top: 68px;
+        max-width: 480px;
+        color: #fff;
+      }
+      .slide__heading {
+        margin-bottom: 20px;
+        font-size: 60px;
+      }
+      .slide__text {
+        font-size: 25px;
+      }
+      .slide__text a {
+        color: inherit;
+      }
+      .logo {
+        position: absolute;
+        z-index: 30;
+        left: 1%;
+      }
+      .logo img {
+        width: 150px;
+        height: 150px;
+      }
+
+      /* phone */
+      @media only screen and (max-width: 768px) {
+        .slide__content {
+          text-align: center;
+        }
+        .logo img {
+          height: 100px;
+          width: 100px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="logo">
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/d/d7/Ubtlogo.png"
+        alt=""
+      />
+    </div>
+    <div class="slider">
+      <!-- slides -->
+      <div class="slider__slides">
+        <div class="slide s--active">
+          <div class="slide__inner">
+            <div class="slide__content">
+              <h2 class="slide__heading">Kushte të mira të ambientit !</h2>
+              <p class="slide__text">
+                Studentat qëndrojne ne ajër të pastër...
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="slide">
+          <div class="slide__inner">
+            <div class="slide__content">
+              <h2 class="slide__heading">Vazhdimësi në çertifikim.</h2>
+              <p class="slide__text">
+                Kontrata të reja për benefite të studentëve
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="slide">
+          <div class="slide__inner">
+            <div class="slide__content">
+              <h2 class="slide__heading">Pajisjet më të mira në rajon</h2>
+              <p class="slide__text">
+                Eja dhe shiko si është të studiosh duke praktikuar
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="slide">
+          <div class="slide__inner">
+            <div class="slide__content">
+              <h2 class="slide__heading">Objekti me siperfaqe adekuate</h2>
+              <p class="slide__text">Ka vend për të gjithë...!</p>
+            </div>
+          </div>
+        </div>
+        <div class="slide s--prev">
+          <div class="slide__inner">
+            <div class="slide__content">
+              <h2 class="slide__heading">
+                Klasat e sistemuara sipas modeleve europiane.
+              </h2>
+              <p class="slide__text">
+                <a href="/index.html" target="_blank">Kthehu prapa</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- slides end -->
+      <div class="slider__control">
+        <div class="slider__control-line"></div>
+        <div class="slider__control-line"></div>
+      </div>
+      <div class="slider__control slider__control--right m--right">
+        <div class="slider__control-line"></div>
+        <div class="slider__control-line"></div>
+      </div>
+    </div>
+    <h1>dskmds</h1>
+    <script>
+      (function () {
+        var $slides = document.querySelectorAll(".slide");
+        var $controls = document.querySelectorAll(".slider__control");
+        var numOfSlides = $slides.length;
+        var slidingAT = 1300; // sync this with scss variable
+        var slidingBlocked = false;
+
+        [].slice.call($slides).forEach(function ($el, index) {
+          var i = index + 1;
+          $el.classList.add("slide-" + i);
+          $el.dataset.slide = i;
+        });
+
+        [].slice.call($controls).forEach(function ($el) {
+          $el.addEventListener("click", controlClickHandler);
+        });
+
+        function controlClickHandler() {
+          if (slidingBlocked) return;
+          slidingBlocked = true;
+
+          var $control = this;
+          var isRight = $control.classList.contains("m--right");
+          var $curActive = document.querySelector(".slide.s--active");
+          var index = +$curActive.dataset.slide;
+          isRight ? index++ : index--;
+          if (index < 1) index = numOfSlides;
+          if (index > numOfSlides) index = 1;
+          var $newActive = document.querySelector(".slide-" + index);
+
+          $control.classList.add("a--rotation");
+          $curActive.classList.remove("s--active", "s--active-prev");
+          document.querySelector(".slide.s--prev").classList.remove("s--prev");
+
+          $newActive.classList.add("s--active");
+          if (!isRight) $newActive.classList.add("s--active-prev");
+
+          var prevIndex = index - 1;
+          if (prevIndex < 1) prevIndex = numOfSlides;
+
+          document
+            .querySelector(".slide-" + prevIndex)
+            .classList.add("s--prev");
+
+          setTimeout(function () {
+            $control.classList.remove("a--rotation");
+            slidingBlocked = false;
+          }, slidingAT * 0.75);
+        }
+      })();
+    </script>
+  </body>
+</html>
