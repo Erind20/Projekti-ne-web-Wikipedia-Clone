@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Contact</title>
+    <meta charset="UTF-8" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.min.css"
+    />
+  </head>
+  <body>
+    <h1 style="color: green">Kontaktoni me ne!</h1>
+
+    <form action="process-form.php" method="post">
+      <label for="name">Emri</label>
+      <input type="text" id="name" name="name" />
+
+      <label for="message">Mesazhi</label>
+      <textarea id="message" name="message"></textarea>
+
+      <label for="priority">Prioriteti</label>
+      <select id="priority" name="priority">
+        <option value="1">I ulët</option>
+        <option value="2" selected>I mesëm</option>
+        <option value="3">I lartë</option>
+      </select>
+
+      <fieldset>
+        <legend>Type</legend>
+
+        <label>
+          <input type="radio" name="type" value="1" checked />
+          Ankesë
+        </label>
+
+        <br />
+
+        <label>
+          <input type="radio" name="type" value="2" />
+          Sugjerim
+        </label>
+      </fieldset>
+
+      <label>
+        <input type="checkbox" name="terms" />
+        Unë pajtohem me Terms & Conditions
+      </label>
+
+      <br />
+
+      <button>Dërgo</button>
+    </form>
+  </body>
+</html>
