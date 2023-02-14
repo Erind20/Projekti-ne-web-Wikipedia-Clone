@@ -763,17 +763,42 @@
             <a href="#">Privacy policy</a> <a href="#">About</a>
             <a href="#">Terms and conditions</a>
             <a href="#">Cookie statement</a> <a href="#">Developers</a>
+            <button id="butonii">Kontakto me ne fizikisht</button>
           </div>
         </div>
       </div>
     </div>
-
+    <div class="none" id="none">
+      <iframe
+        id="Map"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d188658.2581833713!2d20.874385232812493!3d42.368415000000006!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x13547e5844c64dcb%3A0x904efc11559725f4!2sUniversiteti%20%22UBT%22%20Ferizaj!5e0!3m2!1sen!2s!4v1676340674577!5m2!1sen!2s"
+        width="100%"
+        height="450"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+      ></iframe>
+    </div>
+    <style>
+      .none {
+        display: none;
+        border: 0;
+        margin-top: 1.5rem;
+        overflow: hidden;
+      }
+    </style>
     <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
     <script>
       window.jQuery ||
         document.write(
           '<script src="js/vendor/jquery-1.12.0.min.js"><\/script>'
         );
+
+      // iframe google maps
+      document.getElementById("butonii").onclick = function () {
+        document.getElementById("none").style.display = "block";
+        document.getElementById("butonii").innerHTML = "Shiko me poshte  ↓  ↓";
+      };
     </script>
     <script src="script.js"></script>
   </body>
